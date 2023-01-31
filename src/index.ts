@@ -1,3 +1,3 @@
 import { add } from './test';
 
-console.log(add(18, 24))
+console.log(add(45, 17))
