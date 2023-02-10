@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { BuildOptions } from '../types/config';
+import { BuildOptions } from './types/config';
 import { buildDevServer } from './buildDevServer';
 
 import { buildLoaders } from "./buildLoaders"
@@ -15,7 +15,7 @@ export function buildConfig(options: BuildOptions): webpack.Configuration {
             rules: buildLoaders(options),
         },
         devtool: isDev ? 'inline-source-map' : undefined,
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         plugins: buildPlugins(paths),
         output: {
             filename: '[name].[contenthash].js',

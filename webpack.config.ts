@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import { buildConfig } from './config/build/buildWebpackConfig';
-import { BuildEnv, BuildPaths } from './config/types/config';
+import { BuildEnv, BuildPaths } from './config/build/types/config';
 
 export default (env: BuildEnv) => {
 
@@ -9,6 +9,7 @@ export default (env: BuildEnv) => {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
         build: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
+        src: path.resolve(__dirname, 'src'),
     }
     const PORT = env.port || 3000;
     const mode = env.mode || 'development';
