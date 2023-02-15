@@ -8,12 +8,12 @@ export type ClassNamesTypes = {
 
 export function classNames({
     mainCls,
-    modes,
-    additional,
+    modes = {},
+    additional = [],
 }: ClassNamesTypes): string {
     return [
         mainCls,
-        ...additional,
+        ...additional.filter(Boolean),
         ...Object.entries(modes)
             .filter(([_, value]) => Boolean(value))
             .map(([cls, _]) => cls)

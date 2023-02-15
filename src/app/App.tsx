@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import './styles/index.scss';
 import { useTheme } from "./themes";
 import { classNames } from "shared/lib/classNames";
 import { AppRouter } from "./router";
+import { NavBar } from 'widgets/NavBar';
 
 
 function App() {
@@ -16,10 +16,9 @@ function App() {
 
     return (
         <div className={appClassNames}>
-            <button onClick={toggleTheme}>Сменить тему</button>
-            <Link to='/about'>To About page</Link>
-            <Link to='/'>To Main page</Link>
+            <NavBar />
             <AppRouter />
+            <button onClick={toggleTheme}>Сменить тему</button>
         </div>
     );
 }
