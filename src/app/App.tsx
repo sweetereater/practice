@@ -18,7 +18,6 @@ function App() {
         <div className={appClassNames}>
             <NavBar />
             <AppRouter />
-            <button onClick={toggleTheme}>Сменить тему</button>
         </div>
     );
 }
